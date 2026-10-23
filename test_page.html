@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page de Test Automatisation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #121214;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #202024;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            width: 380px;
+            text-align: center;
+        }
+        h2 { margin-top: 0; color: #ff5000; }
+        button {
+            background: #ff5000;
+            color: #fff;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 8px 4px;
+            transition: 0.2s;
+        }
+        button:hover { background: #e04500; }
+        input {
+            width: calc(100% - 24px);
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background: #18181b;
+            color: #fff;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        .status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            background: #29292e;
+            font-size: 13px;
+            color: #aaa;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Test d'Automatisation</h2>
+        <p style="font-size: 13px; color: #aaa;">Simulation de votre flux d'actions</p>
+
+        <div>
+            <button id="btn-start" onclick="logAction('Bouton 1 cliqué !')">Commencer</button>
+        </div>
+
+        <div>
+            <input type="text" id="champ" placeholder="Entrez un texte..." oninput="logAction('Champ rempli : ' + this.value)" />
+        </div>
+
+        <div>
+            <button id="btn-suite" onclick="logAction('Bouton 2 cliqué !')">Suivant</button>
+            <button id="btn-valider" onclick="logAction('Bouton 3 cliqué ! ✅')">Valider</button>
+        </div>
+
+        <div class="status" id="status-box">En attente des actions...</div>
+    </div>
+
+    <script>
+        function logAction(msg) {
+            document.getElementById('status-box').innerHTML = msg;
+        }
+    </script>
+</body>
+</html>
